@@ -1,13 +1,133 @@
-/** index.wxss **/
-.title {
-  font-size: 36rpx;
-  color: #333;
-  margin-top: 100rpx;
-  font-weight: bold;
+/** miniprogram/pages/index/index.wxss */
+.container {
+  padding: 20rpx;
+  background-color: #f6f6f6;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: block; /* Override global flex center */
 }
 
-.intro {
-  margin-top: 20rpx;
+.header {
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
   font-size: 28rpx;
   color: #888;
+  margin-top: 10rpx;
+}
+
+.promise-list {
+  margin-top: 20rpx;
+  padding-bottom: 120rpx; /* 为悬浮按钮留出空间 */
+}
+
+.loading, .empty-state {
+  text-align: center;
+  margin-top: 100rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.promise-card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.promise-card:active {
+  transform: scale(0.98);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.card-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-status {
+  font-size: 24rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+}
+
+.status-0 {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.status-1 {
+  background-color: #f6ffed;
+  color: #52c41a;
+}
+
+.status-2 {
+  background-color: #fff1f0;
+  color: #f5222d;
+}
+
+.card-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.date {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.fab-btn {
+  position: fixed;
+  bottom: 60rpx;
+  right: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #07c160;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6rpx 16rpx rgba(7, 193, 96, 0.4);
+  z-index: 100;
+}
+
+.plus {
+  color: #fff;
+  font-size: 60rpx;
+  line-height: 1;
+  margin-top: -6rpx;
 }
