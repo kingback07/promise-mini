@@ -1,0 +1,75 @@
+page {
+  background-color: #f6f6f6;
+}
+
+.container {
+  padding: 30rpx;
+}
+
+.form-group {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 0 30rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.form-item {
+  border-bottom: 1rpx solid #f0f0f0;
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  font-weight: 500;
+}
+
+.input {
+  font-size: 32rpx;
+  color: #333;
+  height: 60rpx;
+}
+
+.textarea {
+  font-size: 32rpx;
+  color: #333;
+  width: 100%;
+  min-height: 150rpx;
+}
+
+.picker {
+  font-size: 32rpx;
+  color: #333;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.placeholder {
+  color: #bbb;
+}
+
+.submit-btn {
+  background-color: #07c160;
+  color: #fff;
+  font-size: 34rpx;
+  border-radius: 44rpx;
+  padding: 20rpx 0;
+  font-weight: 500;
+}
+
+.submit-btn::after {
+  border: none;
+}
+
+.submit-btn[disabled] {
+  background-color: #9ed9b0 !important;
+  color: #fff !important;
+}

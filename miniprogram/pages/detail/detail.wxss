@@ -1,0 +1,67 @@
+page {
+  background-color: #f6f6f6;
+  padding: 30rpx;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.status {
+  font-size: 24rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 8rpx;
+  white-space: nowrap;
+}
+
+.status-0 { color: #07c160; background-color: rgba(7, 193, 96, 0.1); }
+.status-1 { color: #1989fa; background-color: rgba(25, 137, 250, 0.1); }
+.status-2 { color: #999; background-color: rgba(0,0,0,0.05); }
+
+.section {
+  margin-bottom: 30rpx;
+}
+
+.label {
+  display: block;
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+
+.content {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+.time {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.loading, .error {
+  text-align: center;
+  color: #999;
+  margin-top: 100rpx;
+}

@@ -1,0 +1,33 @@
+<view class="container">
+  <block wx:if="{{promise}}">
+    <view class="card">
+      <view class="header">
+        <text class="title">{{promise.title}}</text>
+        <text class="status status-{{promise.status}}">{{promise.statusText}}</text>
+      </view>
+      
+      <view class="section">
+        <text class="label">承诺内容</text>
+        <text class="content">{{promise.content}}</text>
+      </view>
+
+      <view class="section">
+        <text class="label">截止日期</text>
+        <text class="time">{{promise.deadlineStr}}</text>
+      </view>
+
+      <view class="section">
+        <text class="label">创建时间</text>
+        <text class="time">{{promise.createdAtStr}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{loading}}">
+    <view class="loading">加载中...</view>
+  </block>
+  <block wx:else>
+    <view class="error">
+      <text>未找到该承诺信息</text>
+    </view>
+  </block>
+</view>
