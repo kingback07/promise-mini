@@ -1,0 +1,13 @@
+/** index.wxss **/
+.title {
+  font-size: 36rpx;
+  color: #333;
+  margin-top: 100rpx;
+  font-weight: bold;
+}
+
+.intro {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #888;
+}
