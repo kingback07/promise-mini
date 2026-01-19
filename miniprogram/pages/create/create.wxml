@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="form-group">
+    <view class="label">我想承诺...</view>
+    <input class="input-title" placeholder="例如：每天坚持背单词" placeholder-class="placeholder" bindinput="onTitleInput" value="{{title}}" auto-focus/>
+  </view>
+
+  <view class="form-group">
+    <view class="label">具体内容 (选填)</view>
+    <textarea class="input-content" placeholder="写下更多细节，比如具体的计划..." placeholder-class="placeholder" bindinput="onContentInput" value="{{content}}" maxlength="200"></textarea>
+  </view>
+
+  <view class="form-group">
+    <view class="label">截止日期 (选填)</view>
+    <picker mode="date" value="{{deadline}}" start="{{today}}" bindchange="onDateChange">
+      <view class="picker {{deadline ? '' : 'picker-empty'}}">
+        {{deadline || '点击选择日期'}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="btn-area">
+    <button class="submit-btn" bindtap="submitPromise" loading="{{submitting}}" disabled="{{!title}}">一言为定</button>
+  </view>
+</view>
