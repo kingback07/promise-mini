@@ -1,0 +1,30 @@
+<view class="container">
+  <form bindsubmit="onSubmit">
+    <view class="form-group">
+      <view class="form-item">
+        <text class="label">承诺主题</text>
+        <input class="input" name="title" placeholder="例如：每天跑步5公里" placeholder-class="placeholder" />
+      </view>
+      
+      <view class="form-item">
+        <text class="label">详细内容</text>
+        <textarea class="textarea" name="content" placeholder="写下你的承诺细节..." placeholder-class="placeholder" auto-height></textarea>
+      </view>
+
+      <view class="form-item">
+        <text class="label">截止日期</text>
+        <picker mode="date" value="{{deadline}}" start="{{minDate}}" bindchange="onDateChange">
+          <view class="picker">
+            {{deadline || '请选择日期'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="btn-area">
+      <button form-type="submit" class="submit-btn" disabled="{{submitting}}">
+        {{submitting ? '创建中...' : '一言为定'}}
+      </button>
+    </view>
+  </form>
+</view>

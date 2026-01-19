@@ -1,13 +1,150 @@
 /** index.wxss **/
-.title {
-  font-size: 36rpx;
-  color: #333;
-  margin-top: 100rpx;
-  font-weight: bold;
+page {
+  background-color: #f6f6f6;
+  height: 100%;
 }
 
-.intro {
-  margin-top: 20rpx;
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+.header {
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+  z-index: 10;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.promise-list {
+  flex: 1;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.promise-item {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.promise-item:active {
+  transform: scale(0.98);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.item-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+  margin-right: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-status {
+  font-size: 24rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+.status-0 { /* 进行中 */
+  color: #07c160;
+  background-color: rgba(7, 193, 96, 0.1);
+}
+
+.status-1 { /* 已完成 */
+  color: #1989fa;
+  background-color: rgba(25, 137, 250, 0.1);
+}
+
+.status-2 { /* 已失效 */
+  color: #999;
+  background-color: rgba(0,0,0,0.05);
+}
+
+.item-content {
   font-size: 28rpx;
-  color: #888;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.item-footer {
+  border-top: 1rpx solid #f0f0f0;
+  padding-top: 20rpx;
+}
+
+.item-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100rpx;
+}
+
+.empty-text {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.loading {
+  text-align: center;
+  padding: 30rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.fab-btn {
+  position: fixed;
+  right: 40rpx;
+  bottom: 60rpx;
+  width: 110rpx;
+  height: 110rpx;
+  background-color: #07c160;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6rpx 20rpx rgba(7, 193, 96, 0.4);
+  z-index: 100;
+}
+
+.fab-icon {
+  color: #fff;
+  font-size: 60rpx;
+  font-weight: 300;
+  margin-top: -8rpx;
+}
+
+.bottom-spacer {
+  height: 150rpx;
 }
