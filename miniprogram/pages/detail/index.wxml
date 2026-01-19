@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="card">
+    <view class="header">
+      <text class="title">{{detail.title}}</text>
+      <text class="status status-{{detail.status}}">{{statusMap[detail.status]}}</text>
+    </view>
+    <view class="content">
+      <text>{{detail.content}}</text>
+    </view>
+    <view class="meta">
+      <view>截止时间：{{detail.deadlineFormat}}</view>
+      <view>创建时间：{{detail.createdAtFormat}}</view>
+    </view>
+  </view>
+
+  <view class="actions" wx:if="{{detail.status === 0}}">
+    <button class="btn btn-finish" bindtap="updateStatus" data-status="1">标记完成</button>
+    <button class="btn btn-fail" bindtap="updateStatus" data-status="2">标记失败</button>
+  </view>
+</view>
