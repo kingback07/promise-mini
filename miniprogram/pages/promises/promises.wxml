@@ -1,0 +1,38 @@
+<view class="container">
+  <!-- Tabs -->
+  <view class="tabs">
+    <view class="tab-item {{currentTab === 'ongoing' ? 'active' : ''}}" bindtap="switchTab" data-tab="ongoing">进行中</view>
+    <view class="tab-item {{currentTab === 'completed' ? 'active' : ''}}" bindtap="switchTab" data-tab="completed">已完成</view>
+    <view class="tab-item {{currentTab === 'expired' ? 'active' : ''}}" bindtap="switchTab" data-tab="expired">已失效</view>
+  </view>
+
+  <!-- Loading -->
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <!-- List -->
+  <view class="promise-list" wx:else>
+    <block wx:if="{{list.length > 0}}">
+      <view class="promise-item" wx:for="{{list}}" wx:key="_id" bindtap="goToDetail" data-id="{{item._id}}">
+        <view class="promise-header">
+          <text class="title">{{item.title}}</text>
+          <text class="status status-{{item.status}}">{{statusMap[item.status]}}</text>
+        </view>
+        <view class="promise-content">{{item.content}}</view>
+        <view class="promise-footer">
+          <text class="time">截止: {{item.deadlineFormatted}}</text>
+        </view>
+      </view>
+    </block>
+    
+    <!-- Empty State -->
+    <view wx:else class="empty-state">
+      <image src="../../images/empty.png" mode="aspectFit" class="empty-img" wx:if="{{hasEmptyImage}}"></image>
+      <text>暂无相关承诺</text>
+    </view>
+  </view>
+
+  <!-- FAB (Floating Action Button) -->
+  <view class="fab" bindtap="goToCreate">
+    <text>+</text>
+  </view>
+</view>
