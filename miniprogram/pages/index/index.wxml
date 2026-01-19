@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">
+    <text>欢迎使用 {{title}}</text>
+  </view>
+  <view class="intro">
+    <text>记录你的每一个承诺</text>
+  </view>
+</view>
