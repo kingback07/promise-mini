@@ -1,9 +1,33 @@
-<!--index.wxml-->
 <view class="container">
-  <view class="title">
-    <text>欢迎使用 {{title}}</text>
+  <view class="header-section">
+    <view class="header-title">我的承诺</view>
   </view>
-  <view class="intro">
-    <text>记录你的每一个承诺</text>
+  
+  <scroll-view scroll-y="true" class="list-container">
+    <block wx:if="{{loading}}">
+      <view class="loading">加载中...</view>
+    </block>
+    <block wx:elif="{{promises.length > 0}}">
+      <view class="promise-item" wx:for="{{promises}}" wx:key="_id">
+        <view class="item-header">
+          <text class="item-title">{{item.title}}</text>
+          <text class="item-status status-{{item.status}}">{{item.statusText}}</text>
+        </view>
+        <view class="item-content" wx:if="{{item.content}}">{{item.content}}</view>
+        <view class="item-footer">
+          <text class="item-date" wx:if="{{item.deadline}}">截止: {{item.formattedDeadline}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="empty-state">
+        <image class="empty-img" src="../../images/empty.png" mode="aspectFit" wx:if="{{false}}"></image> <!-- Placeholder -->
+        <text>还没有承诺哦，快去许一个吧！</text>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class="fab-btn" bindtap="goToCreate">
+    <text>+</text>
   </view>
 </view>
