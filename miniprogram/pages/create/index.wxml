@@ -1,0 +1,24 @@
+<view class="container">
+  <form bindsubmit="onSubmit">
+    <view class="form-group">
+      <view class="label">承诺主题</view>
+      <input name="title" placeholder="例如：每天跑步5公里" class="input"/>
+    </view>
+    
+    <view class="form-group">
+      <view class="label">详细内容</view>
+      <textarea name="content" placeholder="填写具体的承诺内容..." class="textarea"></textarea>
+    </view>
+    
+    <view class="form-group">
+      <view class="label">截止日期</view>
+      <picker mode="date" value="{{date}}" start="{{startDate}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+    
+    <button form-type="submit" type="primary" class="submit-btn" loading="{{submitting}}">创建承诺</button>
+  </form>
+</view>

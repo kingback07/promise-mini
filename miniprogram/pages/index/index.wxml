@@ -1,9 +1,35 @@
-<!--index.wxml-->
 <view class="container">
-  <view class="title">
-    <text>欢迎使用 {{title}}</text>
+  <!-- Tabs -->
+  <view class="tabs">
+    <view class="tab-item {{currentTab === -1 ? 'active' : ''}}" bindtap="switchTab" data-status="-1">全部</view>
+    <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-status="0">进行中</view>
+    <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-status="1">已完成</view>
+    <view class="tab-item {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-status="2">已失效</view>
   </view>
-  <view class="intro">
-    <text>记录你的每一个承诺</text>
+
+  <!-- List -->
+  <scroll-view scroll-y="true" class="list-container">
+    <block wx:if="{{list.length > 0}}">
+      <view class="promise-item" wx:for="{{list}}" wx:key="_id" bindtap="goToDetail" data-id="{{item._id}}">
+        <view class="item-header">
+          <text class="item-title">{{item.title}}</text>
+          <text class="item-status status-{{item.status}}">{{statusMap[item.status]}}</text>
+        </view>
+        <view class="item-content">{{item.content}}</view>
+        <view class="item-footer">
+          <text class="item-time">截止: {{item.deadlineFormat}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="empty-state">
+        <text>暂无承诺，快去创建一个吧！</text>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- FAB -->
+  <view class="fab" bindtap="goToCreate">
+    <text>+</text>
   </view>
 </view>
